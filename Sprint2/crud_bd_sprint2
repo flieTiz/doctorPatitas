@@ -11,6 +11,43 @@ Contraseña - String
 }
 
 
+datos mascota
+{
+nombres - 
+vacunas
+raza
+genero
+especie
+edad
+peso
+altura
+}
+
+datos de consulta
+{
+historia clínica
+sintomatología
+historial de medicamentos
+vacunas
+}
+
+
+datos productos
+{
+nombre
+tamaño
+unidadmedida
+precio
+laboratorio
+desc
+presentacion
+vencimiento
+lote
+cantidadPedido
+noReferencia
+}
+
+
 
 Cómo se guardan fotos si es necesario tenerlas en una base de datos?
 
