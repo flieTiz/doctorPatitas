@@ -1,0 +1,20 @@
+
+datosPropietario
+{
+Nombres- String
+Apellidos - String
+Dirección - String
+Teléfono - String
+Email (nombre se usuario) - String
+Fecha de nacimiento - String
+Contraseña - String
+}
+
+
+
+Cómo se guardan fotos si es necesario tenerlas en una base de datos?
+
+
+
+
+
