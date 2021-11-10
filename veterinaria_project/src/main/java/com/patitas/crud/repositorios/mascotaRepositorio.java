@@ -1,0 +1,19 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package com.patitas.crud.repositorios;
+
+import com.patitas.crud.modelo.mascotaModelo;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.stereotype.Repository;
+
+/**
+ *
+ * @author flietiz
+ */
+@Repository
+public interface mascotaRepositorio extends MongoRepository<mascotaModelo, String>{
+    
+}
