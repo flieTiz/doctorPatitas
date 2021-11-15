@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.patitas.crud.modelo;
+package com.doctor.crud.vetModelo;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,12 +12,12 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author flietiz
  */
-
 @Document(collection="datos_mascota")
 public class mascotaModelo {
     
     @Id
-    private String nombres;
+    private String id;
+    private String nombre;
     private String edad;
     private String especie;
     private String raza;
@@ -26,12 +26,20 @@ public class mascotaModelo {
     private String peso;
     private String altura;
 
-    public String getNombres() {
-        return nombres;
+    public String getId() {
+        return id;
     }
 
-    public void setNombres(String nombres) {
-        this.nombres = nombres;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
     public String getEdad() {

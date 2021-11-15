@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.patitas.crud.repositorios;
+package com.doctor.crud.vetRepositorio;
 
-import com.patitas.crud.modelo.veterinariaModelo;
+import com.doctor.crud.vetModelo.mascotaModelo;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,8 +13,7 @@ import org.springframework.stereotype.Repository;
  *
  * @author flietiz
  */
-
 @Repository
-public interface veterinariaRepositorio extends MongoRepository<veterinariaModelo, String>{
+public interface mascotaRepositorio extends MongoRepository<mascotaModelo, String>{
     
 }

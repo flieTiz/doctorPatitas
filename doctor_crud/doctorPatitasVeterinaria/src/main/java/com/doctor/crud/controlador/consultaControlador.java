@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.patitas.crud.controladores;
+package com.doctor.crud.controlador;
 
-import com.patitas.crud.modelo.veterinariaModelo;
-import com.patitas.crud.repositorios.veterinariaRepositorio;
+import com.doctor.crud.vetModelo.consultaModelo;
+import com.doctor.crud.vetRepositorio.consultaRepositorio;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -25,49 +25,47 @@ import org.springframework.web.bind.annotation.RestController;
  *
  * @author flietiz
  */
-
 @RestController
 @CrossOrigin(origins="*", methods = {RequestMethod.POST,RequestMethod.GET,RequestMethod.DELETE,RequestMethod.PUT})
 
-@RequestMapping("/api/usuarios")
+@RequestMapping("/api/consulta")
 
-public class vaterinariaControlador {
+public class consultaControlador {
     
-    ///////Vairable de insertar 
+    /////////Variable insertar
     @Autowired
-    private veterinariaRepositorio vet;
+    private consultaRepositorio cons;
     
-    ///////Procedimiento guardar
+    //////////Procedimiento guardar
     @PostMapping("/guardar")
-    public veterinariaModelo guardarUsuarios(@Validated @RequestBody veterinariaModelo varU){
+    public consultaModelo guardarConsulta(@Validated @RequestBody consultaModelo varC){
         
-        return vet.insert(varU);
+        return cons.insert(varC);
         
     }
     
-    //////////Procedimiento consulta general
+    ///////////Procedimiento consulta general
     @GetMapping("/consultar")
-    public List<veterinariaModelo> consultarUsuarios(){
+    public List<consultaModelo> consultarConsulta(){
         
-        return vet.findAll();
+        return cons.findAll();
         
     }
     
-    /////////Procedimiento actualizar informacion
+    //////////Procedimiento actualizar info
     @PutMapping("/actualizar/{id}")
-    public veterinariaModelo actualizarUsuarios(@PathVariable String id,@Validated @RequestBody veterinariaModelo varU){
+    public consultaModelo actualizarConsulta(@PathVariable String id,@Validated @RequestBody consultaModelo varC){
         
-        return vet.save(varU);
+        return cons.save(varC);
         
     }
     
-    ////////Procedimiento eliminar usuario
+    //////////Procedimiento eliminar producto
     @DeleteMapping("/eliminar{id}")
-    public void eliminarUsuarios(@PathVariable String id){
+    public void eliminarConsulta(@PathVariable String id){
         
-        vet.deleteById(id);
+        cons.deleteById(id);
         
     }
-    
     
 }

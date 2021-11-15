@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.patitas.crud.modelo;
+package com.doctor.crud.vetModelo;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,20 +12,20 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author flietiz
  */
+@Document(collection="datos_dueño")
 
-@Document(collection="datos_propietario_mascota")
 public class veterinariaModelo {
     
     @Id
     private String id;
     private String nombres;
     private String apellidos;
+    private String email;
     private String direccion;
     private String fecNacimiento;
-    private String telefono;
-    private String email;
-    private String DNI;
     private String password;
+    private String telefono;
+    private String dni;
 
     public String getId() {
         return id;
@@ -51,6 +51,14 @@ public class veterinariaModelo {
         this.apellidos = apellidos;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getDireccion() {
         return direccion;
     }
@@ -67,6 +75,14 @@ public class veterinariaModelo {
         this.fecNacimiento = fecNacimiento;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public String getTelefono() {
         return telefono;
     }
@@ -75,27 +91,12 @@ public class veterinariaModelo {
         this.telefono = telefono;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDni() {
+        return dni;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDni(String dni) {
+        this.dni = dni;
     }
-
-    public String getDNI() {
-        return DNI;
-    }
-
-    public void setDNI(String DNI) {
-        this.DNI = DNI;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
+    
 }
