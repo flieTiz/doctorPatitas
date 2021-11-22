@@ -7,9 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NuevoComponent implements OnInit {
 
+  m:any={
+    nombres:"",
+    apellidos:"",
+    email:"",
+    direccion:"",
+    fecNacimiento:"",
+    password:"",
+    telefono:"",
+    dni:""
+  }
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  guardar():void{
+
   }
 
 }

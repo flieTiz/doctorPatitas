@@ -5,6 +5,7 @@
  */
 package com.doctor.crud.vetModelo;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -12,10 +13,10 @@ import org.springframework.data.mongodb.core.mapping.Document;
  *
  * @author flietiz
  */
-@Document(collection="datos_dueño")
+@Document(collection = "datos_dueño")
 
 public class veterinariaModelo {
-    
+
     @Id
     private String id;
     private String nombres;
@@ -98,5 +99,5 @@ public class veterinariaModelo {
     public void setDni(String dni) {
         this.dni = dni;
     }
-    
+
 }

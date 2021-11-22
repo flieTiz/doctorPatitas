@@ -27,7 +27,13 @@ export class ConsultarComponent implements OnInit {
   }
 
   eliminar(x:any):void{
-    alert(x);
+    
+    this.http.delete("http://localhost:8080/api/veterinaria/eliminar"+x)
+    .subscribe((x:any)=>{
+      console.log(x);
+      this.listar();
+    });
+
   }
 
 }
