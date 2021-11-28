@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { NuevoRoutingModule } from './nuevo-routing.module';
 import { NuevoComponent } from './nuevo.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +13,9 @@ import { NuevoComponent } from './nuevo.component';
   ],
   imports: [
     CommonModule,
-    NuevoRoutingModule
+    NuevoRoutingModule,
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class NuevoModule { }

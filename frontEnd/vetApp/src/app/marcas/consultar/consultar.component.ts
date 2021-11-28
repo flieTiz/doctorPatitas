@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+
+declare const $:any;
+
 @Component({
   selector: 'app-consultar',
   templateUrl: './consultar.component.html',
@@ -14,6 +17,9 @@ export class ConsultarComponent implements OnInit {
   
   ngOnInit(): void {
     this.listar();
+
+    $('#table_usu').DataTable();
+    
   }
 
   listar():void{

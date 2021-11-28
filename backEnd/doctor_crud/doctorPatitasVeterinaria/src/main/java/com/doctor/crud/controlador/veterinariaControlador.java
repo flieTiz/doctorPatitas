@@ -8,6 +8,8 @@ package com.doctor.crud.controlador;
 import com.doctor.crud.vetModelo.veterinariaModelo;
 import com.doctor.crud.vetRepositorio.veterinariaRepositorio;
 import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,7 +37,7 @@ public class veterinariaControlador {
     private veterinariaRepositorio vet;
     
     /////////Procedimiento guardar
-    @PostMapping("/guardar")
+    @PostMapping("/GuardarUsuarios")
     public veterinariaModelo guardarUsuario(@Validated @RequestBody veterinariaModelo varU){
         
         return vet.insert(varU);
@@ -43,24 +45,32 @@ public class veterinariaControlador {
     }
     
     ////////Procedimiento consulta general
-    @GetMapping("/consultar")
-    public List<veterinariaModelo> consultarUsuarios(){
+    @GetMapping("/ConsultarGeneral")
+    public List<veterinariaModelo> consultarTodos(){
         
         return vet.findAll();
         
     }
+
+    ////////Procedimiento consulta general
+    @GetMapping("/ConsultarIndividual")
+    public Optional<veterinariaModelo> consultarIndividual(@PathVariable (value = "id") String x){
+        
+        return vet.findById(x);
+        
+    }
     
     //////////Procedimiento actualizar info
-    @PutMapping("/actualizar/{id}")
-    public veterinariaModelo actualizarUsuarios(@PathVariable String id, @Validated @RequestBody veterinariaModelo varU){
+    @PutMapping("/ActualizarUsuarios/{id}")
+    public veterinariaModelo actualizarUsuarios(@PathVariable (value = "id") String x, @Validated @RequestBody veterinariaModelo varU){
         
         return vet.save(varU);
         
     }
     
     ///////////Procedimiento eliminar usuario
-    @DeleteMapping("/eliminar{id}")
-    public void eliminarusuarios(@PathVariable String id){
+    @DeleteMapping("/EliminarUsuario{id}")
+    public void eliminarUsuarios(@PathVariable String id){
         
         vet.deleteById(id);
         
