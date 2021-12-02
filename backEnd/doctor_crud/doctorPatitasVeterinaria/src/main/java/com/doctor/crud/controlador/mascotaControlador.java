@@ -8,7 +8,11 @@ package com.doctor.crud.controlador;
 import com.doctor.crud.vetModelo.mascotaModelo;
 import com.doctor.crud.vetRepositorio.mascotaRepositorio;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,8 +37,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class mascotaControlador {
     
     //////////Variable de insertar
-    @Autowired
-    private mascotaRepositorio masC;
+    @Autowired private mascotaRepositorio masC;
+    @Autowired private MongoTemplate m;
+
     
     /////////Procedimiento guardar
     @PostMapping("/guardar")
@@ -49,6 +54,36 @@ public class mascotaControlador {
     public List<mascotaModelo> consultarMascota(){
         
         return masC.findAll();
+        
+    }
+    
+    ////////Procedimiento consulta individual
+    @GetMapping("/ConsultarIndividual/{id}")
+    public Optional<mascotaModelo> consultarIndividual(@PathVariable (value="id") String x){
+        
+        return masC.findById(x);
+        
+    }
+    
+    ////////Procedimiento consulta por nombre
+    @GetMapping("/ConsultarNombre/{nombres}")
+    public List<mascotaModelo> consultarPorNombre(@PathVariable (value = "nombres") String nombres){
+        
+        Query q=new Query();
+        q.addCriteria(Criteria.where("nombres").is(nombres));
+        
+        return m.find(q, mascotaModelo.class);
+        
+    }
+    
+    ////////Procedimiento consulta por varios parametros
+    @GetMapping("/ConsultarPorVariosParametros/{nombres}/{id}")
+    public List<mascotaModelo> consultarPorVariosParametros(@PathVariable (value = "nombres") String nombres, @PathVariable (value = "id") String x){
+        
+        Query q=new Query();
+        q.addCriteria(Criteria.where("nombres").is(nombres).and("id").is(x));
+        
+        return m.find(q, mascotaModelo.class);
         
     }
     

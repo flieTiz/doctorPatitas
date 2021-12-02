@@ -5,6 +5,7 @@
  */
 package com.doctor.crud.vetModelo;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -18,6 +19,7 @@ public class consultaModelo {
     
     @Id
     private String id;
+    private String id_consulta;
     private String antecedentes;
     private String sintomatologia;
     private String historialMedicamentos;
@@ -29,6 +31,14 @@ public class consultaModelo {
 
     public void setId(String id) {
         this.id = id;
+    }
+    
+    public String getId_consulta() {
+        return id_consulta;
+    }
+
+    public void setId_consulta(String id_consulta) {
+        this.id_consulta = id_consulta;
     }
 
     public String getAntecedentes() {

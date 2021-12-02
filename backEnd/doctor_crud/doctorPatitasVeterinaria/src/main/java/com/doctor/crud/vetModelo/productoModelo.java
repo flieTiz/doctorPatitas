@@ -5,6 +5,7 @@
  */
 package com.doctor.crud.vetModelo;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -17,7 +18,7 @@ public class productoModelo {
     
     @Id
     private String id;
-    private String nombre;
+    private String nombres;
     private String tamano;
     private String peso;
     private String unidadMedida;
@@ -38,12 +39,12 @@ public class productoModelo {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getTamano() {

@@ -10,9 +10,8 @@
     </parent>
     <groupId>com.doctor</groupId>
     <artifactId>crud</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>crud</name>
-    <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
     </properties>
@@ -31,21 +30,21 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-                
+
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <version>1.5.12</version>
         </dependency>
-      
+        
         <dependency>
-            <groupId>io.springfox</groupId>
-            <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
         </dependency>
                 
     </dependencies>
-
+    
     <build>
         <plugins>
             <plugin>
@@ -90,5 +89,5 @@
             </releases>
         </pluginRepository>
     </pluginRepositories>
-
+    <packaging>jar</packaging>
 </project>

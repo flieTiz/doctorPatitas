@@ -17,7 +17,7 @@ public class mascotaModelo {
     
     @Id
     private String id;
-    private String nombre;
+    private String nombres;
     private String edad;
     private String especie;
     private String raza;
@@ -34,12 +34,12 @@ public class mascotaModelo {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getNombres() {
+        return nombres;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
     }
 
     public String getEdad() {

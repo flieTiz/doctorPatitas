@@ -8,7 +8,11 @@ package com.doctor.crud.controlador;
 import com.doctor.crud.vetModelo.productoModelo;
 import com.doctor.crud.vetRepositorio.productoRepositorio;
 import java.util.List;
+import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.query.Criteria;
+import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -33,8 +37,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class productoControlador {
     
     /////////Variable insertar
-    @Autowired
-    private productoRepositorio prod;
+    @Autowired private productoRepositorio prod;
+    @Autowired private MongoTemplate m;
+
     
     //////////Procedimiento guardar
     @PostMapping("/guardar")
@@ -45,10 +50,40 @@ public class productoControlador {
     }
     
     ///////////Procedimiento consulta general
-    @GetMapping("/consultar")
+    @GetMapping("/consultarTodos")
     public List<productoModelo> consultarProducto(){
         
         return prod.findAll();
+        
+    }
+    
+    ////////Procedimiento consulta individual
+    @GetMapping("/ConsultarIndividual/{id}")
+    public Optional<productoModelo> consultarIndividual(@PathVariable (value="id") String x){
+        
+        return prod.findById(x);
+        
+    }
+    
+    ////////Procedimiento consulta por nombre
+    @GetMapping("/ConsultarNombre/{nombres}")
+    public List<productoModelo> consultarPorNombre(@PathVariable (value = "nombres") String nombres){
+        
+        Query q=new Query();
+        q.addCriteria(Criteria.where("nombres").is(nombres));
+        
+        return m.find(q, productoModelo.class);
+        
+    }
+    
+    ////////Procedimiento consulta por varios parametros
+    @GetMapping("/ConsultarPorVariosParametros/{nombres}/{id}")
+    public List<productoModelo> consultarPorVariosParametros(@PathVariable (value = "nombres") String nombres, @PathVariable (value = "id") String x){
+        
+        Query q=new Query();
+        q.addCriteria(Criteria.where("nombres").is(nombres).and("id").is(x));
+        
+        return m.find(q, productoModelo.class);
         
     }
     

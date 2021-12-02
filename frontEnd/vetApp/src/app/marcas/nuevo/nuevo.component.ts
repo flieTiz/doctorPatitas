@@ -27,12 +27,12 @@ export class NuevoComponent implements OnInit {
 
   guardar():void{
 
-    this.http.post("http://localhost:8080/api/veterinaria/guardar",this.m)
+    this.http.post("http://localhost:8083/api/veterinaria/GuardarUsuarios",this.m)
     .subscribe((x:any)=>{
       console.log(x);
       alert("Registrado Satisfactoriamente")
 
-      this.rou.navigate(["/consultar"])
+      this.rou.navigate(["/consultar"]);
 
     });
 
