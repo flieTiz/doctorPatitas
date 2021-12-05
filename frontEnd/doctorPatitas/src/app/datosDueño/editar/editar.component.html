@@ -1,0 +1,52 @@
+
+<form (submit)="actualizar()"ngNativeValidate>
+<div class="form">
+
+<label for="dni">Documento de identidad:</label>
+<input required name="dni" [(ngModel)]="m.dni" type="text"   class="form-control" id="dni">
+
+<br>
+<label for="nombre">Nombres:</label>
+<input required name="nombres" type="text" [(ngModel)]="m.nombres" class="form-control" id="nombre" >
+
+<br>
+<label for="ape">Apellidos</label>
+<input required name="apelldos" type="text" [(ngModel)]="m.apellidos" class="form-control" id="ape">
+
+<br>
+<label for="tel">Teléfono:</label>
+<input required name="telefono" type="text" [(ngModel)]="m.telefono" class="form-control" id="tel">
+
+<br>
+<label for="dir">Dirección:</label>
+<input type="text" [(ngModel)]="m.direccion" class="form-control" id="dir">
+
+
+
+
+<label for="correo">Correo:</label>
+<input required name="correo" type="email" [(ngModel)]="m.correo" class="form-control" id="correo">
+
+<br>
+<label for="contra">Contraseña</label>
+<input required name="contra" type="password" [(ngModel)]="m.contra" class="form-control" id="contra">
+
+<br>
+<label for="fecha">Fecha de Nacimiento:</label>
+<input required name="fechaNacimiento" type="date" [(ngModel)]="m.fechaNacimiento" class="form-control" id="fecha">
+
+<br>
+<div class="row">
+    <div class="col-sm-8">
+        <input type="file" (change)="archivoSeleccionado($event)" name="" class="form-control">
+    </div>
+    <div class="col-sm-4">
+        <button class="btn btn-danger" (click)="subirArchivo()">Cargar archivo</button>
+    </div>
+</div>
+
+<button  type="submit" class="btn btn-primary"><i class="fas fa-pencil-alt"></i> Actualizar</button>
+<button (click)="cancelar()" class="btn btn-warning"><i class="fas fa-times"></i> Cancelar</button>
+
+</div>
+</form>

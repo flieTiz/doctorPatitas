@@ -1,0 +1,60 @@
+<br>
+<div class="container">
+    <div class="row">
+        <div class="colu">
+            <strong>Documento Identidad</strong>    
+        </div>
+        <div class="col-sm-3">
+                <input type="text" [(ngModel)]="m.dni" name="dni" class="form-control">
+        </div>
+          <div class="col-sm-1">
+                <strong>Nombre</strong>
+        </div>
+        <div class="col-sm-4">
+                <input type="text" [(ngModel)]="m.nombres" name="nombre" class="form-control">
+        </div>
+        <div class="col-sm-2">
+            <button (click)="consultaP()" class="btn btn-primary"><i class="fas fa-search"></i> Buscar</button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <table class="display table table-striped table-bordered table-hover " id="t_d2">
+    <thead>
+        <tr>
+    <th>Dni</th>
+    <th>Correo</th>
+    <th>Nombres</th>
+    <th>Apellidos</th>
+    <th>Dirección</th>
+    <th>fecha de Nacimiento</th>
+    <th>contraseña</th>
+    <th>Teléfono</th>
+    <th>Opcion</th>
+        </tr>
+
+    </thead>
+    <tbody>
+    <tr *ngFor="let x of infoConsulta">
+    <td>{{x.dni}}</td>
+    <td>{{x.correo}}</td>
+    <td>{{x.nombres}}</td>
+    <td>{{x.apellidos}}</td>
+    <td>{{x.direccion}}</td>
+    <td>{{x.fechaNacimiento}}</td>
+    <td>{{x.contra}}</td>
+    <td>{{x.telefono}}</td>
+    <td><button (click)="editar(x.dni)"class="btn btn-warning"><i class="fas fa-edit"></i> Editar</button>
+    <button (click)="eliminar(x.dni)"class="btn btn-danger"><i class="far fa-trash-alt"></i> Eliminar</button></td>
+    </tr>
+
+
+    </tbody>
+</table>
+        </div>
+    </div>
+</div>

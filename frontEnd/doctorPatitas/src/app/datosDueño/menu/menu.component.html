@@ -1,0 +1,18 @@
+<!-- Grey with black text -->
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <ul class="navbar-nav">
+    
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/menu/consultar']">Consultar <i class="fas fa-search"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/menu/nuevo']">Nuevo <i class="far fa-file"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/menu/consultaParametros']">Consulta por Parametros <i class="fas fa-search-plus"></i></a>
+    </li>
+   
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,11 @@
+.form{
+    max-width: 500px;
+    margin: 20px;
+    margin-left: 20px;
+}
+.box{
+    background-color: #ccc;
+}
+button{
+    margin: 5px;
+}

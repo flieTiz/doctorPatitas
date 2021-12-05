@@ -1,0 +1,45 @@
+
+<div class="box">
+<h1>Nuevo dueño</h1>
+<form (submit)="guardar()" ngNativeValidate>
+
+<label for="dni">Documento de identidad:</label>
+<input required name="dni"[(ngModel)]="m.dni" type="text"   class="form-control" id="dni">
+
+<br>
+<label for="nombre">Nombres:</label>
+<input required name="nombres" type="text" [(ngModel)]="m.nombres" class="form-control" id="nombre">
+
+<br>
+<label for="ape">Apellidos</label>
+<input required name="apellidos" type="text" [(ngModel)]="m.apellidos" class="form-control" id="ape">
+
+<br>
+<label for="tel">Teléfono:</label>
+<input required name="telefono" type="text" [(ngModel)]="m.telefono" class="form-control" id="tel">
+
+<br>
+<label for="dir">Dirección:</label>
+<input type="text" [(ngModel)]="m.direccion" class="form-control" id="dir">
+
+
+
+
+<label for="correo">Correo:</label>
+<input required name="correo" type="email" [(ngModel)]="m.correo" class="form-control" id="correo">
+
+<br>
+<label for="contra">Contraseña</label>
+<input required name="contra" type="password" [(ngModel)]="m.contra" class="form-control" id="contra">
+
+<br>
+<label for="fecha">Fecha de Nacimiento:</label>
+<input required name="fechaNacimiento" type="date" [(ngModel)]="m.fechaNacimiento" class="form-control" id="fecha">
+
+<br>
+
+<button type="submit"  class="btn btn-success"><i class="far fa-save"></i> Guardar</button>
+<button type="reset" class="btn btn-primary">Limpiar</button>
+<button (click)="cancelar()" class="btn btn-warning"><i class="fas fa-times"></i> Cancelar</button>
+</form>
+</div>
